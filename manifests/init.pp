@@ -6,11 +6,27 @@ class moodle (
 # package git
   # add case for different os
   package { 'git': ensure => latest }
+
 # create directory
+  $dirtree = dirtree('/var/www/html')
+  ensure_resources('File', $dirtree, {
+    ensure => directory,
+    mode   => '0755',
+  })
+
 # git clone moodle
-# chmod 0755
+  exec { 'Base clone':
+    command => 'git clone git@github.com:moodle/moodle.git',
+  # onlyif => 'Somefile does not exist',
+  }
+
 # create data directory
-# chmod 0777
+  $dirtree1 = dirtree('/opt/moodle')
+  ensure_resources('File', $dirtree, {
+    ensure => directory,
+    mode   => '0777',
+  })
+
 # get database info
 # create config.php
 # apache vhost
