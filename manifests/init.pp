@@ -9,7 +9,7 @@ class moodle (
 
 # create directory
   $dirtree = dirtree('/var/www/html')
-  ensure_resources('File', $dirtree, {
+  ensure_resource('File', $dirtree, {
     ensure => directory,
     mode   => '0755',
   })
