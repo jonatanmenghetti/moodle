@@ -1,11 +1,11 @@
 
-class moodle (
+class Moodle (
 
 ){
 
 # package git
   # add case for different os
-  package { 'git': ensure => latest }
+  package { 'git': ensure => latest, }
 
 # create directory
   $dirtree = dirtree('/var/www/html')
