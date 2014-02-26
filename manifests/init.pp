@@ -22,7 +22,7 @@ class moodle (
 
 # create data directory
   $dirtree1 = dirtree('/opt/moodle')
-  ensure_resources('File', $dirtree, {
+  ensure_resource('File', $dirtree1, {
     ensure => directory,
     mode   => '0777',
   })
