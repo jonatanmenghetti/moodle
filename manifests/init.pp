@@ -1,5 +1,5 @@
 
-class Moodle (
+class moodle (
 
 ){
 
