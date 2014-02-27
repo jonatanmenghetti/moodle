@@ -47,6 +47,7 @@ class moodle (
       path => '/var/www/html/moodle',
     }
   }
+  class { 'apache::mod::php':}
 
 # set up cron
   cron { moodle:
