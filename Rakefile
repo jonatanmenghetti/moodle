@@ -18,14 +18,12 @@ namespace :rspec do
 end
 task :default => :rspec
 
-# Need to work out why puppet-lint wants to say package is not in autoload layout
-# and I can't get it to ignore that from rake.
-#begin
-#  if Gem::Specification::find_by_name('puppet-lint')
-#    require 'puppet-lint/tasks/puppet-lint'
-#    PuppetLint.configuration.send("disable_no-autoloader_layout")
-#    PuppetLint.configuration.ignore_paths = ["spec/**/*.pp", "vendor/**/*.pp"]
-#    task :default => [:rspec, :lint]
-#  end
-#rescue Gem::LoadError
-#end
+begin
+  if Gem::Specification::find_by_name('puppet-lint')
+    require 'puppet-lint/tasks/puppet-lint'
+    PuppetLint.configuration.send("disable_no-autoloader_layout")
+    PuppetLint.configuration.ignore_paths = ["spec/**/*.pp", "vendor/**/*.pp"]
+    task :default => [:rspec, :lint]
+  end
+rescue Gem::LoadError
+end
