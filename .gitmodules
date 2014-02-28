@@ -1,6 +1,6 @@
-[submodule "dirtree"]
-  path = spec/fixtures/modules/dirtree
-  url = git@github.com:AlexCline/puppet-dirtree.git
 [submodule "stdlib"]
   path = spec/fixtures/modules/stdlib
   url = git@github.com:puppetlabs/puppetlabs-stdlib.git
+[submodule "spec/fixtures/modules/dirtree"]
+	path = spec/fixtures/modules/dirtree
+	url = git@github.com:AlexCline/puppet-dirtree.git
