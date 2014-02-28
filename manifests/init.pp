@@ -17,8 +17,8 @@ class moodle (
 # git clone moodle
   exec { 'Base clone':
     command => 'git clone git@github.com:moodle/moodle.git',
-    cwd => '/var/www/html',
-    path => '/usr/bin',
+    cwd     => '/var/www/html',
+    path    => '/usr/bin',
     creates => '/var/www/html/moodle',
   }
 
@@ -40,19 +40,19 @@ class moodle (
 # apache vhost
   class { 'apache':}
   apache::vhost {'moodle':
-    port => '80',
+    port    => '80',
     docroot => '/var/www/html/moodle',
     aliases => {
       alias => '/mymoodle',
-      path => '/var/www/html/moodle',
+      path  => '/var/www/html/moodle',
     }
   }
   class { 'apache::mod::php':}
 
 # set up cron
-  cron { moodle:
+  cron { 'moodle':
     command => '/usr/bin/wget -O /dev/null http://localhost/mymoodle/admin/cron.php',
-    user => root, # moodle user
-    minute => '*/5',
+    user    => root, # moodle user
+    minute  => '*/5',
   }
 }
