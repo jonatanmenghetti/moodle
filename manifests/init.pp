@@ -33,8 +33,8 @@ class moodle (
 
 # create config.php
   ensure_resource('File', '/var/www/html/moodle/config.php', {
-    ensure => present,
-    source => 'puppet:///modules/moodle/config.php',
+    ensure  => present,
+    content => template('moodle/config.php.erb'),
   })
 
 # apache vhost
