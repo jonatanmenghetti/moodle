@@ -1,3 +1,0 @@
-[submodule "spec/fixtures/modules/dirtree"]
-	path = spec/fixtures/modules/dirtree
-	url = https://github.com/AlexCline/puppet-dirtree.git
