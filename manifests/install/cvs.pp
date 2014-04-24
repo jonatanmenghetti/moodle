@@ -1,0 +1,4 @@
+
+class moodle::install::cvs {
+
+}

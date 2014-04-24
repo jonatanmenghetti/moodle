@@ -1,0 +1,5 @@
+
+
+class moodle::web::apache {
+
+}
