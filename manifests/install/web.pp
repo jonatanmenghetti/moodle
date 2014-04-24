@@ -1,4 +1,4 @@
 
-class moodle::install::git {
+class moodle::install::web {
 
 }
