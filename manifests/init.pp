@@ -19,7 +19,7 @@ class moodle (
     command => 'git clone git@github.com:moodle/moodle.git',
     cwd     => '/var/www/html',
     path    => '/usr/bin',
-    creates => '/var/www/html/moodle',
+#    creates => '/var/www/html/moodle',
   }
 
 # create data directory
