@@ -22,7 +22,7 @@ begin
   if Gem::Specification::find_by_name('puppet-lint')
     require 'puppet-lint/tasks/puppet-lint'
     PuppetLint.configuration.send("disable_no-autoloader_layout")
-    PuppetLint.configuration.ignore_paths = ["spec/**/*.pp", "vendor/**/*.pp"]
+    PuppetLint.configuration.ignore_paths = ["spec/**/*.pp", "vendor/**/*.pp","pkg/**/*.pp"]
     task :default => [:rspec, :lint]
   end
 rescue Gem::LoadError
