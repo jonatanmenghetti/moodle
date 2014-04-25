@@ -1,4 +1,4 @@
-name 'firebladee-moodle'
+name 'Firebladee-moodle'
 version '0.0.1'
 source 'git@github.com:Firebladee/moodle.git'
 author 'Fireblade'
