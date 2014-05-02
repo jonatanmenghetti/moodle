@@ -23,7 +23,7 @@ class moodle::install::git {
     timeout => 600,
     creates => '/var/www/html/moodle/README.txt',
     mode    => '0750',
-    owner   => 'root', # Needs to change
+#    user    => 'root', # Needs to change
     group   => 'apache',
   }
 }
