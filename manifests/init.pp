@@ -12,7 +12,7 @@ class moodle (
 ){
 
   if $install {
-    class{'moddle::install':
+    class{'moodle::install':
       install => $install_type,
   }}
 
