@@ -15,8 +15,8 @@ class moodle::install (
   $dirtree1 = dirtree('/opt/moodle')
   ensure_resource('File', $dirtree1, {
     ensure => directory,
-#    mode   => '0777', # Need to find correct mode.
+    mode   => '0770',
+    owner  => 'root',
+    group  => 'apache',
   })
-
-
 }

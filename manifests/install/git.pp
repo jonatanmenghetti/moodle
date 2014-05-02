@@ -9,7 +9,9 @@ class moodle::install::git {
   $dirtree = dirtree('/var/www/html')
   ensure_resource('File', $dirtree, {
     ensure => directory,
-#    mode   => '0755',  # Need to find correct mode.
+    mode   => '0750',
+    owner  => 'root', # Needs to change
+    group  => 'apache',
   })
 
   # git clone moodle
@@ -20,5 +22,8 @@ class moodle::install::git {
     path    => '/usr/bin',
     timeout => 600,
     creates => '/var/www/html/moodle/README.txt',
+    mode    => '0750',
+    owner   => 'root', # Needs to change
+    group   => 'apache',
   }
 }

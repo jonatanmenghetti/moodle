@@ -16,8 +16,6 @@ class moodle (
       install => $install_type,
   }}
 
-  # get database info
-
   if $database {
     class{'moodle::database':
       database => $database_type,
