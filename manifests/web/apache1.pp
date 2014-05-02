@@ -1,6 +1,6 @@
 
 
-class moodle::web::apache {
+class moodle::web::apache1 {
 
   class { 'apache':}
   apache::vhost {'moodle':
