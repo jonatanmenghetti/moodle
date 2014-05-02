@@ -12,7 +12,7 @@ class moodle::install (
   }
 
   # create data directory
-  $dirtree1 = dirtree('/opt/moodle')
+  $dirtree1 = dirtree('/opt/moodle', '/opt')
   ensure_resource('File', $dirtree1, {
     ensure => directory,
     mode   => '0770',

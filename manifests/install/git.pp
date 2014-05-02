@@ -6,7 +6,7 @@ class moodle::install::git {
   package { 'git': ensure => latest, }
 
   # create directory
-  $dirtree = dirtree('/var/www/html')
+  $dirtree = dirtree('/var/www/html', '/var/www/html')
   ensure_resource('File', $dirtree, {
     ensure => directory,
     mode   => '0750',
