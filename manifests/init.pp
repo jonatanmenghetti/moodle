@@ -22,11 +22,11 @@ class moodle (
   }}
 
   # create config.php
-  ensure_resource('File', '/var/www/html/moodle/config.php', {
-    ensure  => present,
-    content => template('moodle/config.php.erb'),
-    require => Exec['Base clone'],
-  })
+#  ensure_resource('File', '/var/www/html/moodle/config.php', {
+#    ensure  => present,
+#    content => template('moodle/config.php.erb'),
+#    require => Exec['Base clone'],
+#  })
 
   if $web {
     class{'moodle::web':
@@ -34,9 +34,9 @@ class moodle (
   }}
 
   # set up cron
-  cron { 'moodle':
-    command => '/usr/bin/wget -O /dev/null http://localhost/mymoodle/admin/cron.php',
-    user    => root, # moodle user
-    minute  => '*/5',
-  }
+#  cron { 'moodle':
+#    command => '/usr/bin/wget -O /dev/null http://localhost/mymoodle/admin/cron.php',
+#    user    => root, # moodle user
+#    minute  => '*/5',
+#  }
 }
