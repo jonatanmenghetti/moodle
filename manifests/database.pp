@@ -5,7 +5,7 @@ class moodle::database (
 ){
 
   if $database != '' {
-    class {'mysql::server': 
+    class {'mysql::server':
       databases => {
         'moodle' => {
           ensure  => 'present',

@@ -19,7 +19,7 @@ class moodle (
   # get database info
 
   if $database {
-    class{'moodle::install':
+    class{'moodle::database':
       database => $database_type,
   }}
 
