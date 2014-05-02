@@ -1,13 +1,13 @@
 
 class moodle (
 
-  $install  = true
-  $web      = true
-  $database = true
+  $install  = true,
+  $web      = true,
+  $database = true,
 
-  $install_type  = 'git'
-  $web_type      = 'apache'
-  $database_type = 'mysql'
+  $install_type  = 'git',
+  $web_type      = 'apache',
+  $database_type = 'mysql',
 
 ){
 
