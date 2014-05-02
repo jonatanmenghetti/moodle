@@ -21,7 +21,7 @@ class moodle (
   if $database {
     class{'moodle::install':
       database => $database_type,
-  }}  
+  }}
 
   # create config.php
   ensure_resource('File', '/var/www/html/moodle/config.php', {

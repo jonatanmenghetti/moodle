@@ -8,7 +8,7 @@ class moodle::install (
 
   case $install {
     git:     {class{'moodle::install::git':}}
-    default: {notify{'Build type ${install} not yet known':}}
+    default: {notify{"Build type ${install} not yet known":}}
   }
 
   # create data directory
