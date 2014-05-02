@@ -22,7 +22,7 @@ class moodle::install::git {
     path    => '/usr/bin',
     timeout => 600,
     creates => '/var/www/html/moodle/README.txt',
-    mode    => '0750',
+#    mode    => '0750',
 #    user    => 'root', # Needs to change
     group   => 'apache',
   }
