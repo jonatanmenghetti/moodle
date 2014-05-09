@@ -11,13 +11,15 @@ class moodle (
 
 ){
 
+  include moodle::params
+
   if $install {
     class{'moodle::install':
       install => $install_type,
   }}
 
   if $database {
-    class{'moodle::database':
+    class{'moodle::databases':
       database => $database_type,
   }}
 
