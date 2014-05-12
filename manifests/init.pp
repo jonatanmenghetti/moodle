@@ -9,6 +9,9 @@ class moodle (
   $web_type      = 'apache',
   $database_type = 'mysql',
 
+  $db_user = 'fred',
+  $db_name = 'moodledb',
+
 ){
 
   include moodle::params
@@ -21,6 +24,7 @@ class moodle (
   if $database {
     class{'moodle::databases':
       database => $database_type,
+#      db_user  => $db_user,
   }}
 
   # create config.php

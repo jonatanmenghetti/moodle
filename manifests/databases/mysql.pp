@@ -8,7 +8,7 @@ class moodle::databases::mysql {
 
   notify{"moodle mysql hash = ${::moodle::params::moodle_mysql}":}
 
-  
+
 #  create_resources('mysql::server', $::moodle::params::moodle_mysql)
 
   create_resources('class', $::moodle::params::moodle_mysql)
@@ -46,8 +46,8 @@ class moodle::databases::mysql {
 #        ensure  => 'present',
 #        charset => 'utf8',
 #        collate => 'utf8_unicode_ci',
-#      }  
-#    }  
-#  }   
+#      }
+#    }
+#  }
 }
 
