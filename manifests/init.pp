@@ -24,7 +24,6 @@ class moodle (
   if $database {
     class{'moodle::databases':
       database => $database_type,
-#      db_user  => $db_user,
   }}
 
   # create config.php

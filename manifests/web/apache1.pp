@@ -12,5 +12,7 @@ class moodle::web::apache1 {
     }
   }
   class { 'apache::mod::php':}
+#  apache::mod{'gd':}
+
 
 }
