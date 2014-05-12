@@ -12,7 +12,14 @@ class moodle::web::apache1 {
     }
   }
   class { 'apache::mod::php':}
-#  apache::mod{'gd':}
+
+  class {'php':}
+  php::module{'gd':}
+  php::module{'mbstring':}
+  php::module{'xmlrpc':}
+  php::module{'soap':}
+  php::module{'intl':}
+  php::module{'pecl-zendopcache':}
 
 
 }
