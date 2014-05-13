@@ -21,6 +21,8 @@ class moodle (
       install => $install_type,
   }}
 
+  include moodle::install::auto
+
   if $database {
     class{'moodle::databases':
       database => $database_type,

@@ -38,4 +38,22 @@ class moodle::params {
       },
     }
   }
+
+  $dbtype               = mysqli
+  $dblibrary            = native
+  $dbhost               = localhost
+  $dbname               = moodledb
+  $dbuser               = fred
+  $dbpass               = fredblogs
+  $prefix               = mdl_
+  $wwwroot              = 'http://127.0.0.1:4568/moodle'
+  $dataroot             = '/opt/moodle'
+  $admin                = admin
+  $directorypermissions = 0777
+
+  $dboptions = {
+    dbpersist => 0,
+    dbport    => '',
+    dbsocket  => '',
+  }
 }

@@ -1,0 +1,155 @@
+<?php
+##############################################################################
+# This file is mananged by puppet.  Do NOT edit on the server, your changes  #
+# will be blown away on the next puppet run.                                 #
+##############################################################################
+unset($CFG);
+global $CFG;
+$CFG = new stdClass();
+
+$CFG->dbtype    = <%#= @dbtype %>;
+$CFG->dblibrary = <%#= @dblibrary %>;
+$CFG->dbhost    = <%#= @dbhost %>;
+$CFG->dbname    = <%#= @dbname %>;
+$CFG->dbuser    = <%#= @dbuser %>;
+$CFG->dbpass    = <%#= @dbpass %>;
+$CFG->prefix    = <%#= @prefix %>;
+$CFG->dboptions = <%#= dboptions %>;<%# Maybe a hash? %>
+  '<%#= dbpersist %>' => <%#= true/false %>,
+  '<%#= dbsocket %>'  => <%#= dbsocket %>,
+  '<%#= dbport %>'    => <%#= dbport %>,
+);
+
+$CFG->wwwroot              = <%#= wwwroot %>;
+$CFG->dataroot             = <%#= dataroot %>;
+$cfg->directorypermissions = <%#= dirper %>;
+$CFG->admin                = <%#= admin %>;
+<%#if something then -%>
+date_default_timezone_set('<%# something %>');
+<%#end -%>
+$CFG->mnetkeylifetime = <%#= keytime %>;
+$CFG->includeuserpasswordsinbackup = <%#= passback %>;
+$CFG->disableusercreationonrestore = <%#= disuser %>;
+$CFG->keeptempdirectoriesonbackup = <%#= tempbackup %>;
+$CFG->forcedifferentsitecheckingusersonrestore = <%#= something %>;
+$CFG->disablestatsprocessing = <%#= something %>;
+$CFG->admineditalways = <%#= something %>;
+$CFG->defaultblocks_override = <%#= something %>;
+$CFG->defaultblocks_site = <%#= something %>;
+$CFG->defaultblocks_social = <%#= something %>;
+$CFG->defaultblocks_topics = <%#= something %>;
+$CFG->defaultblocks_weeks = <%#= something %>;
+$CFG->defaultblocks = <%#= something %>;
+$CFG->moodlepageclass = <%#= something %>;
+$CFG->moodlepageclassfile = <%#= something %>;
+$CFG->blockmanagerclass = <%#= something %>;
+$CFG->blockmanagerclassfile = <%#= something %>;
+$CFG->filelifetime = <%#= something %>;
+$CFG->xsendfile = <%#= something %>;
+<%# if something -%>
+$CFG->xsendfilealiases = array(
+  <%# loop -%>
+  '<%#= something %>' => '<%#= something %>',
+  <%# end -%>
+<%# end -%>
+$CFG->yuislasharguments = <%#= something %>;
+RewriteRule <%#= something %>;
+$CFG->session_handler_class = <%#= something %>;
+$CFG->session_database_acquire_lock_timeout = <%#= something %>;
+$CFG->session_file_save_path = <%#= something %>;
+$CFG->session_memcached_save_path = <%#= something %>;
+$CFG->session_memcached_prefix = <%#= something %>;
+$CFG->session_memcached_acquire_lock_timeout = <%#= something %>;
+$CFG->session_memcached_lock_expire = <%#= something %>;
+$CFG->session_update_timemodified_frequency = <%#= something %>;
+$CFG->tracksessionip = <%#= something %>;
+$CFG->handlebounces = <%#= something %>;
+$CFG->minbounces = <%#= something %>;
+$CFG->bounceratio = <%#= something %>;
+$CFG->mailprefix = <%#= something %>;
+$CFG->maildomain = <%#= something %>;
+$CFG->reverseproxy = <%#= something %>;
+$CFG->sslproxy = <%#= something %>;
+$CFG->nofixday = <%#= something %>;
+$CFG->preferlinegraphs = <%#= something %>;
+$CFG->customscripts = <%#= something %>;
+$CFG->debug = <%#= something %>;
+$CFG->debugdisplay = <%#= something %>;
+$CFG->debugusers = <%#= something %>;
+$CFG->earlyprofilingenabled = <%#= something %>;
+$CFG->forcefirstname = <%#= something %>;
+$CFG->forcelastname = <%#= something %>;
+$CFG->dblogerror = <%#= something %>;
+$CFG->logsql = <%#= something %>;
+$CFG->apacheloguser = <%#= something %>;
+$CFG->emailconnectionerrorsto = <%#= something %>;
+$cfg->themeorder = array(<%#= loop %><%#= something %>,<%# end %>;
+$CFG->themedir = <%#= something %>;
+$CFG->tempdir = <%#= something %>;
+$CFG->cachedir = <%#= something %>;
+$CFG->localcachedir = <%#= something %>;
+$CFG->preventfilelocking = <%#= something %>;
+$CFG->lang = <%#= something %>;
+$CFG->extramemorylimit = <%#= something %>;
+$CFG->altcacheconfigpath = <%#= something %>;
+$CFG->enablecssoptimiser = <%#= something %>;
+$CFG->cssoptimiserstats = <%#= something %>;
+$CFG->cssoptimiserpretty = <%#= something %>;
+$CFG->disableupdatenotifications = <%#= something %>;
+$CFG->disableupdateautodeploy = <%#= something %>;
+$CFG->disableonclickaddoninstall = <%#= something %>;
+$CFG->svgicons = <%#= something %>;
+$CFG->preventexecpath = <%#= something %>;
+$CFG->noreplyuserid = <%#= something %>;
+$CFG->supportuserid = <%#= something %>;
+$CFG->lock_factory = <%#= something %>;
+$CFG->lock_file_root = <%#= something %>;
+$CFG->themedesignermode = <%#= something %>;
+$CFG->cachejs = <%#= something %>;
+$CFG->yuiloginclude = array(
+  <%# loop -%>
+  '<%#= something %>' => '<%#= something %>',
+  <%# end -%>
+$CFG->yuilogexclude = array(
+  <%# loop -%>
+  '<%#= something %>' => '<%#= something %>',
+  <%# end -%>
+$CFG->yuiloglevel = <%#= something %>;
+$CFG->langstringcache = <%#= something %>;
+$CFG->noemailever = <%#= something %>;
+$CFG->divertallemailsto = <%#= something %>;
+$CFG->xmldbdisablecommentchecking = <%#= something %>;
+$CFG->upgradeshowsql = <%#= something %>;
+$CFG->showcronsql = <%#= something %>;
+$CFG->showcrondebugging = <%#= something %>;
+
+<%# Need to understand the below -%>
+$CFG->somecoresetting = <%#= something %>;
+
+$CFG->forced_plugin_settings = array(<%# loop %>'<%#= something %>' => array(<%# loop1 %>'<%#= something %>',<%# end %>)<%# if more then , if last ); %><%# end %>
+
+$CFG->phpunit_prefix = <%#= something %>;
+$CFG->phpunit_dataroot = <%#= something %>;
+$CFG->phpunit_directorypermissions = <%#= something %>;
+$CFG->passwordsaltmain = <%#= something %>;
+<%# loop -%>
+$CFG->passwordsaltalt<%#= loop number %> = <%#= something %>;
+<%# end -%>
+$CFG->behat_wwwroot = <%#= something %>;
+$CFG->behat_prefix = <%#= something %>;
+$CFG->behat_dataroot = <%#= something %>;
+
+<%# behat_config just looks nasty that is going to be left out for now. -%>
+
+$CFG->behat_restart_browser_after = <%#= something %>;
+$CFG->behat_extraallowedsettings = array(
+    <%# loop -%>
+  '<%#= something %>' => '<%#= something %>',
+  <%# end -%>
+$CFG->behat_usedeprecated = <%#= something %>;
+$CFG->behat_additionalfeatures = array(
+    <%# loop -%>
+  '<%#= something %>' => '<%#= something %>',
+  <%# end -%>
+$CFG->behat_faildump_path = <%#= something %>;
+$CFG->tool_generator_users_password = <%#= something %>;
