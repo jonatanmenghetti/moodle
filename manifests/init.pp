@@ -4,36 +4,31 @@ class moodle (
   $install  = true,
   $web      = true,
   $database = true,
+  $auto     = true,
 
   $install_type  = 'git',
   $web_type      = 'apache',
   $database_type = 'mysql',
 
+  $db_name = 'moodle',
   $db_user = 'fred',
-  $db_name = 'moodledb',
 
 ){
 
-  include moodle::params
 
   if $install {
     class{'moodle::install':
       install => $install_type,
   }}
 
-  include moodle::install::auto
+  if $auto {
+    include moodle::install::auto
+  }
 
   if $database {
     class{'moodle::databases':
       database => $database_type,
   }}
-
-  # create config.php
-#  ensure_resource('File', '/var/www/html/moodle/config.php', {
-#    ensure  => present,
-#    content => template('moodle/config.php.erb'),
-#    require => Exec['Base clone'],
-#  })
 
   if $web {
     class{'moodle::web':

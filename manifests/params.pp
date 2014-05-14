@@ -49,7 +49,7 @@ class moodle::params {
   $wwwroot              = 'http://127.0.0.1:4568/moodle'
   $dataroot             = '/opt/moodle'
   $admin                = admin
-  $directorypermissions = 0777
+  $directorypermissions = 0777 # Change me from this dangeraus default.
 
   $dboptions = {
     dbpersist => 0,
