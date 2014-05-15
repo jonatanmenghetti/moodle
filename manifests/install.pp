@@ -8,6 +8,7 @@ class moodle::install (
 
   case $install {
     git:     {class{'moodle::install::git':}}
+    file:    { include moodle::install::file }
     default: {notify{"Build type ${install} not yet known":}}
   }
 

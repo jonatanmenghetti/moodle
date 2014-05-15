@@ -3,6 +3,7 @@ class moodle::install::auto () inherits moodle::params {
 
   exec{'moodle_auto':
     command => "/usr/bin/php admin/cli/install.php \
+      --dbtype=postgresql \
       --dbname=moodledb \
       --dbuser=fred \
       --dbpass=fredblogs \

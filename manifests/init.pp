@@ -10,11 +10,25 @@ class moodle (
   $web_type      = 'apache',
   $database_type = 'mysql',
 
-  $db_name = 'moodle',
-  $db_user = 'fred',
+  $moodle_mysql = $moodle::params::moodle_mysql,
+  $dbtype       = 'mysqli',
+  $dblibrary    = 'native',
+  $dbhost       = 'localhost',
+  $db_user      = 'fred',
+  $db_name      = 'moodledb',
+  $dbpass       = 'fredblogs',
+  $prefix       = 'mdl_',
+  $wwwroot      = 'http://127.0.0.1:4568/moodle',
+  $dataroot     = '/opt/moodle',
+  $admin        = 'admin',
+
+  $directorypermissions = '0777',
+
+  $dboptions = $moodle::params::dboptions,
 
 ){
 
+#  include moodle::params
 
   if $install {
     class{'moodle::install':

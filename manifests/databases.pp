@@ -5,9 +5,11 @@ class moodle::databases (
 
   if $database != '' {
     case $database {
-      mysql: {
+      mysql:    {
         package{'php-pear-MDB2-Driver-mysqli': ensure => installed}
-        create_resources('class', $::moodle::params::moodle_mysql)}
+        create_resources('class', $::moodle::params::moodle_mysql)
+      }
+      postgresql: { include moodle::databases::postgresql }  
       default: { notify{"${database} is not yet supported":}}
     }
   }
