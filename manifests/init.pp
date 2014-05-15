@@ -6,7 +6,7 @@ class moodle (
   $database = true,
   $auto     = true,
 
-  $install_type  = 'git',
+  $install_type  = 'file',
   $web_type      = 'apache',
   $database_type = 'mysql',
 
