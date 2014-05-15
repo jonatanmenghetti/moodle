@@ -1,5 +1,5 @@
 name 'Firebladee-moodle'
-version '0.0.2'
+version '0.0.3'
 source 'git@github.com:Firebladee/moodle.git'
 author 'Fireblade'
 license 'Apache 2.0'
