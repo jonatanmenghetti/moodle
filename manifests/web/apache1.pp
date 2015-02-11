@@ -2,13 +2,15 @@
 
 class moodle::web::apache1 {
 
-  class { 'apache':}
+  class { 'apache':
+    default_confd_files => false,
+  }
   apache::vhost {'moodle':
     port    => '80',
     docroot => '/var/www/html/moodle',
     aliases => {
-    alias   => '/mymoodle',
-    path    => '/var/www/html/moodle',
+      alias   => '/mymoodle',
+      path    => '/var/www/html/moodle',
     }
   }
   class { 'apache::mod::php':}
@@ -20,6 +22,5 @@ class moodle::web::apache1 {
   php::module{'soap':}
   php::module{'intl':}
   php::module{'pecl-zendopcache':}
-
 
 }
