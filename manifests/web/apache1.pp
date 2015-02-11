@@ -2,9 +2,7 @@
 
 class moodle::web::apache1 {
 
-  class { 'apache':
-    default_confd_files => false,
-  }
+  class { 'apache': }
   apache::vhost {'moodle':
     port    => '80',
     docroot => '/var/www/html/moodle',
@@ -14,6 +12,7 @@ class moodle::web::apache1 {
     }
   }
   class { 'apache::mod::php':}
+  class { 'apache::mod::ssl':}
 
   class {'php':}
   php::module{'gd':}
