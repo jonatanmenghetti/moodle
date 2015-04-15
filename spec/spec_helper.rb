@@ -1,6 +1,4 @@
 require 'rspec-puppet'
-require 'puppet'
-require 'rubygems'
 require 'coveralls'
 
 Coveralls.wear!
