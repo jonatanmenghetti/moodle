@@ -1,4 +1,9 @@
 require 'rspec-puppet'
+require 'puppet'
+require 'rubygems'
+require 'coveralls'
+
+Coveralls.wear!
 
 fixture_path = File.expand_path(File.join(__FILE__, '..', 'fixtures'))
 
