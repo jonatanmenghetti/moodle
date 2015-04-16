@@ -15,3 +15,4 @@ gem 'coveralls', require: false
 gem 'rspec'
 gem 'puppet-syntax'
 gem 'puppetlabs_spec_helper'
+gem 'rspec-core'
