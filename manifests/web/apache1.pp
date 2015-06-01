@@ -13,8 +13,8 @@ class moodle::web::apache1 (
     port    => $vhost_port,
     docroot => $vhost_docroot,
     aliases => {
-      alias   => '/mymoodle',
-      path    => '/var/www/html/moodle',
+      alias => '/mymoodle',
+      path  => '/var/www/html/moodle',
     }
   }
   class { 'apache::mod::php':}
