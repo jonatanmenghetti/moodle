@@ -11,8 +11,3 @@ gem 'rake'
 gem 'puppet-lint'
 gem 'rspec-puppet'
 gem 'puppet', puppetversion
-gem 'coveralls', require: false
-gem 'rspec'
-gem 'puppet-syntax'
-gem 'puppetlabs_spec_helper'
-gem 'rspec-core'

@@ -1,6 +1,1 @@
---colour
---format
-s
---loadby
-mtime
---backtrace
+--colour -f d
