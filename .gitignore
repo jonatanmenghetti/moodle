@@ -3,6 +3,7 @@ coverage
 .bundle/
 Gemfile.lock
 spec/fixtures
+.remote-sync.json
 
 *.old
 
