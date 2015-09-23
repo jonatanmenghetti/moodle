@@ -1,17 +1,38 @@
+class moodle::params{
 
+  $dbtype               = mysqli
+  $dblibrary            = native
+  $dbhost               = localhost
+  $dbuser               = moodle
+  $prefix               = 'mdl_'
+  $wwwroot              = "http://${::ipaddress}"
+  $dataroot             = '/opt/moodle'
+  $admin                = admin
+  $directorypermissions = 0777 # Change me from this dangeraus default.
 
-class moodle::params {
+  if ! $::moodle::db_name {
+    $dbname = 'moodle'
+  } else {
+   $dbname = $::moodle::db_name
+  }
+
+  if ! $::moodle::db_pass {
+    $dbpass = 'x98h2inxebc'
+  } else {
+   $dbpass = $::moodle::dbpass
+ }
+
 
   $moodle_mysql = {
     mysql::server => {
       users => {
         "${::moodle::db_user}@localhost" => {
           ensure        => 'present',
-          password_hash => '*185D87D3277588C7D8ABF3D1F2D3AA89B1D73416',
+          password_hash => mysql_password("${dbpass}"),
         }
       },
       grants => {
-        "${::moodle::db_user}@localhost/${::moodle::db_name}.*" => {
+        "${::moodle::db_user}@localhost/${dbname}.*" => {
           ensure     => 'present',
           options    => ['GRANT'],
           privileges => [
@@ -25,12 +46,12 @@ class moodle::params {
             'INDEX',
             'ALTER',
           ],
-          table      => "${::moodle::db_name}.*",
+          table      => "${dbname}.*",
           user       => "${::moodle::db_user}@localhost",
         }
       },
       databases => {
-        "${::moodle::db_name}" => {
+        "${dbname}" => {
           ensure  => 'present',
           charset => 'utf8',
           collate => 'utf8_unicode_ci',
@@ -38,18 +59,6 @@ class moodle::params {
       },
     }
   }
-
-  $dbtype               = mysqli
-  $dblibrary            = native
-  $dbhost               = localhost
-  $dbname               = moodledb
-  $dbuser               = fred
-  $dbpass               = fredblogs
-  $prefix               = mdl_
-  $wwwroot              = 'http://127.0.0.1:4568/moodle'
-  $dataroot             = '/opt/moodle'
-  $admin                = admin
-  $directorypermissions = 0777 # Change me from this dangeraus default.
 
   $dboptions = {
     dbpersist => 0,
