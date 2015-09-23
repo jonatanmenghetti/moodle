@@ -1,0 +1,31 @@
+{
+  "name": "jonatanmeneghetti-moodle",
+  "version": "0.0.3",
+  "source": "git@github.com:jonatanmeneghetti/moodle.git",
+  "author": "Jonatan Meneghetti",
+  "license": "Apache 2.0",
+  "summary": "Puppet module for Moodle",
+  "description": "Module for Moodle configuration",
+  "project_page": "https://github.com/jonatanmeneghetti/moodle",
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 4.1.0"
+    },
+    {
+      "name": "AlexCline/dirtree",
+      "version_requirement": ">= 0.2.1"
+    },
+    {
+      "name": "puppetlabs/apache",
+      "version_requirement": ">= 1.0.1"
+    },
+    {
+      "name": "maestrodev/wget",
+      "version_requirement": ">= 1.4.1"
+    }
+  ],
+  "types": [
+
+  ],
+}
