@@ -14,7 +14,7 @@ class moodle::install::auto () inherits moodle::params {
       --dataroot=$dataroot \
       --fullname='test site' \
       --shortname=testsite",
-    creates => "/var/www/config.php",
+    creates => "/var/www/moodle/config.php",
     cwd     => "/var/www/moodle",
     group   => 'apache',
   }
