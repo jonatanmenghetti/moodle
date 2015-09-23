@@ -1,14 +1,14 @@
 
 class moodle::install::file (
 
-  $download    = 'http://downloads.sourceforge.net/project/moodle/Moodle/stable27/moodle-2.7.tgz?r=http%3A%2F%2Fdownload.moodle.org%2Fdownload.php%2Fstable27%2Fmoodle-2.7.tgz&ts=1400159836&use_mirror=heanet',
+  $download 	= 'http://ufpr.dl.sourceforge.net/project/moodle/Moodle/stable27/moodle-2.7.tgz',
   $destination = '/tmp/moodle.tgz',
   $cache_dir   = '/var/cache/wget',
 
   $tar     = 'tar -zxvf /tmp/moodle.tgz',
-  $cwd     = '/var/www/html',
+  $cwd     = '/var/www',
   $path    = '/bin',
-  $creates = '/var/www/html/moodle/README.txt',
+  $creates = '/var/www/moodle/README.txt',
 
 ){
 
