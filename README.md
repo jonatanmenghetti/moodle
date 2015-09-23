@@ -1,6 +1,8 @@
+[![Build Status](https://travis-ci.org/jonatanmenghetti/moodle.svg?branch=master)](https://travis-ci.org/jonatanmenghetti/moodle)
+
+
 #### This module is a fork from Firebladee-moodle
 
-[![Build Status](https://travis-ci.org/jonatanmenghetti/moodle.svg?branch=master)](https://travis-ci.org/jonatanmenghetti/moodle)
 This module will build moodle on target server.
 
 This moodle module is very limited at the moment.
