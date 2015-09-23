@@ -1,24 +1,17 @@
 
 
-class moodle::web::apache1 (
-  $vhost_port    = '80',
-  $vhost_docroot = '/var/www/html/moodle',
+class moodle::web::apache1 {
 
-# $apache_mod = array
-# $php_mod = array
-){
-
-  class { 'apache': }
+  class { 'apache':}
   apache::vhost {'moodle':
-    port    => $vhost_port,
-    docroot => $vhost_docroot,
+    port    => '80',
+    docroot => '/var/www/html/moodle',
     aliases => {
-      alias => '/mymoodle',
-      path  => '/var/www/html/moodle',
+    alias   => '/mymoodle',
+    path    => '/var/www/html/moodle',
     }
   }
   class { 'apache::mod::php':}
-  class { 'apache::mod::ssl':}
 
   class {'php':}
   php::module{'gd':}
@@ -27,5 +20,6 @@ class moodle::web::apache1 (
   php::module{'soap':}
   php::module{'intl':}
   php::module{'pecl-zendopcache':}
+
 
 }
