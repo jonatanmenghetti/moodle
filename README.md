@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/Firebladee/moodle.svg?branch=master)](https://travis-ci.org/Firebladee/moodle)
-[![endorse](https://api.coderwall.com/firebladee/endorsecount.png)](https://coderwall.com/firebladee)
-[![Coverage Status](https://coveralls.io/repos/Firebladee/moodle/badge.svg)](https://coveralls.io/r/Firebladee/moodle)
+#### This module is a fork from Firebladee-moodle
+
+[![Build Status](https://travis-ci.org/jonatanmeneghetti/moodle.svg?branch=master)](https://travis-ci.org/jonatanmeneghetti/moodle)
 
 This module will build moodle on target server.
 
